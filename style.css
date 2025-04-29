@@ -1,0 +1,110 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f8e1e7;
+  font-family: 'Dancing Script', cursive;
+  color: #ff69b4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 30px;
+}
+
+.heart-button {
+  font-size: 2.5em;
+  padding: 10px 60px;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  animation: pulse 2s infinite;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.1s ease; /* Zmniejszamy czas animacji */
+}
+
+.heart-button:hover {
+  background-color: #ff85c1; /* jaśniejszy róż na hover */
+  transform: scale(1.1); /* Zwiększenie przycisku na hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* mocniejszy cień */
+}
+
+.heart-button:active {
+  transform: translateY(2px) scale(1); /* efekt wciśnięcia (przycisk nieco zstępuje) */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* cień słabszy przy kliknięciu */
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.reason {
+  font-size: 2.5em;
+  margin-top: 40px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.reason.show {
+  opacity: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc5d3;
+  top: -20px;
+  left: 0;
+  transform: rotate(45deg);
+  animation: fall 5s linear infinite;
+  transform-origin: center;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ffc5d3;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: -10px;
+  left: 0;
+}
+
+.heart::after {
+  left: -10px;
+  top: 0;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(100vh) rotate(45deg);
+    opacity: 0;
+  }
+}
